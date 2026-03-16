@@ -48,6 +48,7 @@ export default function HeroCarousel() {
         plugins={[
           Autoplay({
             delay: 4500,
+            stopOnInteraction: false,
           }),
         ]}
         className="w-full h-full"
