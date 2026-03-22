@@ -24,19 +24,19 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
 
           <Link href="/services" className="hover:text-blue-700 transition">
-            Services
+            Solutions
           </Link>
 
           <Link href="/business-it" className="hover:text-blue-700 transition">
-            Business IT
+            Specialized Solutions
           </Link>
 
           <Link href="/products" className="hover:text-blue-700 transition">
-            Products
+            Online Shop
           </Link>
 
           <Link href="/learning" className="hover:text-blue-700 transition">
-            Learn
+            call center
           </Link>
 
           <Link href="/contact" className="hover:text-blue-700 transition">
@@ -49,7 +49,7 @@ export default function Navbar() {
         {/* DESKTOP CTA */}
         <div className="hidden md:block">
           <Button className="bg-blue-700 hover:bg-blue-800">
-            Book Repair
+            Book a Technician
           </Button>
         </div>
 
@@ -70,16 +70,24 @@ export default function Navbar() {
         <div className="absolute top-24 left-1/2 -translate-x-1/2 w-[95%] bg-white rounded-md shadow-xl flex flex-col items-center gap-6 py-8 text-sm font-medium text-gray-700 md:hidden">
 
           <Link onClick={() => setMenuOpen(false)} href="/services">
-            Services
+            Solutions
           </Link>
 
-          <Link onClick={() => setMenuOpen(false)} href="/business-it">
-            Business IT
-          </Link>
+          
 
           <Link onClick={() => setMenuOpen(false)} href="/products">
-            Products
+            Online Shop
           </Link>
+
+  
+
+      
+
+          <Link onClick={() => setMenuOpen(false)} href="/business-it">
+            specialized solutions
+          </Link>
+
+          
 
           <Link onClick={() => setMenuOpen(false)} href="/learning">
             Learn
@@ -90,7 +98,7 @@ export default function Navbar() {
           </Link>
 
           <Button className="bg-blue-700 hover:bg-blue-800">
-            Book Repair
+            Book a Technician
           </Button>
 
         </div>

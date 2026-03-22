@@ -1,107 +1,57 @@
 "use client"
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem
-} from "@/components/ui/carousel"
-
 import { Button } from "@/components/ui/button"
-import Autoplay from "embla-carousel-autoplay"
-import { useState } from "react"
-
 import SlideInLeft from "@/components/animations/SlideInLeft"
 import SlideInRight from "@/components/animations/SlideInRight"
 
 export default function HeroCarousel() {
 
-  const [current, setCurrent] = useState(0)
-
-  const slides = [
-    {
-      title: "Professional Device Repairs",
-      description:
-        "Expert repair services for phones, laptops and computers with fast turnaround and genuine parts.",
-      button: "Book a Repair",
-      image: "/repair.jpg",
-    },
-    {
-      title: "Reliable Business IT Solutions",
-      description:
-        "Networking infrastructure, system setup and IT support for businesses.",
-      button: "Business Solutions",
-      image: "/business.jpg",
-    },
-    {
-      title: "Quality IT Equipment Supply",
-      description:
-        "We supply laptops, networking equipment, accessories and more.",
-      button: "Browse Products",
-      image: "/quality.jpg",
-    },
-  ]
-
   return (
     <section className="relative w-full h-[95vh] text-white">
 
-      <Carousel
-        plugins={[
-          Autoplay({
-            delay: 4500,
-            stopOnInteraction: false,
-          }),
-        ]}
-        className="w-full h-full"
+      {/* BACKGROUND IMAGE */}
+      <div
+        className="relative w-full h-[95vh] flex items-center"
+        style={{
+          backgroundImage: `url(/repair.jpg)`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       >
 
-        <CarouselContent>
+        {/* DARK OVERLAY */}
+        <div className="absolute inset-0 bg-black/60"></div>
 
-          {slides.map((slide, index) => (
-            <CarouselItem key={index}>
+        {/* HERO CONTENT */}
+        <div className="relative mx-auto max-w-7xl px-6 pt-32">
 
-              <div
-                className="relative w-full h-[95vh] flex items-center"
-                style={{
-                  backgroundImage: `url(${slide.image})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              >
+          <SlideInLeft>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 max-w-3xl leading-tight">
+              Integrated Infrastructure, Security & Data Lifecycle Management
+            </h1>
+          </SlideInLeft>
 
-                {/* DARK OVERLAY */}
-                <div className="absolute inset-0 bg-black/60"></div>
+          <SlideInLeft delay={0.2}>
+            <p className="text-lg md:text-xl mb-8 max-w-2xl text-gray-200">
+              From high-performance call centers and enterprise networking to certified data sanitization and solar power systems — RepairTouch engineers the technology that powers modern African businesses.
+            </p>
+          </SlideInLeft>
 
-                {/* HERO CONTENT */}
-                <div className="relative mx-auto max-w-7xl px-6 pt-32">
+          <SlideInRight delay={0.4}>
+            <div className="flex gap-4 flex-wrap">
+              <Button className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-6 py-3">
+                Book a Technician
+              </Button>
 
-                  <SlideInLeft>
-                    <h1 className="text-4xl md:text-6xl font-bold mb-6 max-w-2xl leading-tight">
-                      {slide.title}
-                    </h1>
-                  </SlideInLeft>
+              <Button variant="outline" className="bg-blue-700  -500 hover:bg-yellow-600 text-black font-semibold px-6 py-3">
+                Visit Online Shop
+              </Button>
+            </div>
+          </SlideInRight>
 
-                  <SlideInLeft delay={0.2}>
-                    <p className="text-lg md:text-xl mb-8 max-w-xl text-gray-200">
-                      {slide.description}
-                    </p>
-                  </SlideInLeft>
+        </div>
 
-                  <SlideInRight delay={0.4}>
-                    <Button className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-6 py-3">
-                      {slide.button}
-                    </Button>
-                  </SlideInRight>
-
-                </div>
-
-              </div>
-
-            </CarouselItem>
-          ))}
-
-        </CarouselContent>
-
-      </Carousel>
+      </div>
 
 
       {/* OVERLAPPING SERVICE CARDS */}
@@ -113,9 +63,9 @@ export default function HeroCarousel() {
           <SlideInLeft delay={0.1}>
             <div className="bg-white text-gray-800 p-4 rounded-lg shadow-xl">
               <div className="text-2xl font-bold text-blue-700 mb-1">01</div>
-              <h3 className="font-semibold text-sm">Device Repairs</h3>
+              <h3 className="font-semibold text-sm">Call Centers</h3>
               <p className="text-xs text-gray-600">
-                Phones and laptops repaired fast.
+                VoIP, PBX & agent systems.
               </p>
             </div>
           </SlideInLeft>
@@ -123,9 +73,9 @@ export default function HeroCarousel() {
           <SlideInRight delay={0.2}>
             <div className="bg-white text-gray-800 p-4 rounded-lg shadow-xl">
               <div className="text-2xl font-bold text-blue-700 mb-1">02</div>
-              <h3 className="font-semibold text-sm">Business IT</h3>
+              <h3 className="font-semibold text-sm">Infrastructure</h3>
               <p className="text-xs text-gray-600">
-                Networking and IT support.
+                Fiber, WiFi & networking.
               </p>
             </div>
           </SlideInRight>
@@ -133,9 +83,9 @@ export default function HeroCarousel() {
           <SlideInLeft delay={0.3}>
             <div className="bg-white text-gray-800 p-4 rounded-lg shadow-xl">
               <div className="text-2xl font-bold text-blue-700 mb-1">03</div>
-              <h3 className="font-semibold text-sm">IT Equipment</h3>
+              <h3 className="font-semibold text-sm">Security & SCADA</h3>
               <p className="text-xs text-gray-600">
-                Laptops and accessories.
+                CCTV, automation & control.
               </p>
             </div>
           </SlideInLeft>
@@ -143,9 +93,9 @@ export default function HeroCarousel() {
           <SlideInRight delay={0.4}>
             <div className="bg-white text-gray-800 p-4 rounded-lg shadow-xl">
               <div className="text-2xl font-bold text-blue-700 mb-1">04</div>
-              <h3 className="font-semibold text-sm">Maintenance</h3>
+              <h3 className="font-semibold text-sm">Power & Solar</h3>
               <p className="text-xs text-gray-600">
-                Preventive system maintenance.
+                UPS, batteries & solar systems.
               </p>
             </div>
           </SlideInRight>

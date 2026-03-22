@@ -12,31 +12,37 @@ import {
 export default function FAQSection() {
 
   const faqs = [
-    {
-      question: "How long does a repair usually take?",
-      answer:
-        "Most repairs are completed within 24–48 hours depending on the complexity of the issue and availability of parts.",
-    },
-    {
-      question: "Do you provide warranty on repairs?",
-      answer:
-        "Yes. We provide warranty on most repairs to ensure the quality and reliability of our service.",
-    },
-    {
-      question: "Do you repair all laptop and phone brands?",
-      answer:
-        "We repair most major brands including Apple, Dell, HP, Lenovo, Asus, Samsung and many others.",
-    },
-    {
-      question: "Can businesses request on-site IT support?",
-      answer:
-        "Yes. We provide on-site IT support and infrastructure solutions for businesses and organizations.",
-    },
-    {
-      question: "Do I need to book before bringing my device?",
-      answer:
-        "Walk-ins are welcome, but booking in advance helps us diagnose and repair your device faster.",
-    },
+    
+  {
+    question: "How much can my business save by switching to VoIP?",
+    answer:
+      "Most of our clients see a 30% to 60% reduction in telephony costs by switching to VoIP systems using SIP trunking and modern PBX solutions.",
+  },
+  {
+    question: "Can I keep my existing business phone numbers?",
+    answer:
+      "Yes. We handle full number porting so your existing business numbers remain active during and after migration to our VoIP systems.",
+  },
+  {
+    question: "Is formatting a hard drive enough to protect my data?",
+    answer:
+      "No. Formatting only hides data. We use certified tools like Active@ KillDisk to permanently erase data using international standards, making recovery impossible.",
+  },
+  {
+    question: "Why do I need a Data Sanitization Certificate?",
+    answer:
+      "Businesses and law firms are legally required to protect client data. Our certificate provides proof that sensitive data was securely destroyed before disposal or resale.",
+  },
+  
+ 
+  
+  
+  {
+    question: "Can SCADA systems integrate with existing infrastructure?",
+    answer:
+      "Yes. We integrate SCADA systems with your current network while ensuring secure data flow and real-time monitoring for industrial environments.",
+  },
+
   ]
 
   return (
