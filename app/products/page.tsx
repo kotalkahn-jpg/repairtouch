@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import SlideUp from "@/components/animations/SlideUp";
 import FadeIn from "@/components/animations/FadeIn";
+
+type Region = "MW" | "ZA" | "US" | "GB" | "EU" | "KE";
 
 const products = [
   {
@@ -77,7 +79,18 @@ const products = [
 export default function ProductsPage() {
 
   const [filter, setFilter] = useState("all");
-  const [region, setRegion] = useState<"MW" | "ZA">("MW");
+  const [region, setRegion] = useState<Region>("MW");
+
+  // 🔥 Load saved region
+  useEffect(() => {
+    const saved = localStorage.getItem("region") as Region | null;
+    if (saved) setRegion(saved);
+  }, []);
+
+  // 🔥 Save region
+  useEffect(() => {
+    localStorage.setItem("region", region);
+  }, [region]);
 
   const filteredProducts =
     filter === "all"
@@ -161,23 +174,33 @@ export default function ProductsPage() {
             </div>
 
             {/* REGION TOGGLE */}
-            <div className="flex items-center gap-2 border px-3 py-1 rounded text-sm">
+            <div className="flex items-center gap-2 border px-3 py-1 rounded text-sm flex-wrap">
 
-              <button
-                onClick={() => setRegion("MW")}
-                className={region === "MW" ? "font-bold text-blue-700" : ""}
-              >
-                🇲🇼 MWK
-              </button>
+              {[
+                { code: "MW", label: "🇲🇼 MWK" },
+                { code: "ZA", label: "🇿🇦 ZAR" },
+                { code: "US", label: "🇺🇸 USD" },
+                { code: "GB", label: "🇬🇧 GBP" },
+                { code: "EU", label: "🇪🇺 EUR" },
+                { code: "KE", label: "🇰🇪 KES" },
+              ].map((r, i, arr) => (
+                <div key={r.code} className="flex items-center gap-2">
 
-              <span>|</span>
+                  <button
+                    onClick={() => setRegion(r.code as Region)}
+                    className={`px-2 py-1 rounded ${
+                      region === r.code
+                        ? "font-bold text-blue-700 bg-blue-50"
+                        : ""
+                    }`}
+                  >
+                    {r.label}
+                  </button>
 
-              <button
-                onClick={() => setRegion("ZA")}
-                className={region === "ZA" ? "font-bold text-blue-700" : ""}
-              >
-                🇿🇦 ZAR
-              </button>
+                  {i !== arr.length - 1 && <span>|</span>}
+
+                </div>
+              ))}
 
             </div>
 
@@ -189,10 +212,24 @@ export default function ProductsPage() {
 
             {filteredProducts.map((product, index) => {
 
-              const price =
-                region === "MW"
-                  ? `MWK ${product.priceMWK.toLocaleString()}`
-                  : `R ${product.priceZAR.toLocaleString()}`;
+              const getPrice = () => {
+                switch (region) {
+                  case "MW":
+                    return `MWK ${product.priceMWK.toLocaleString()}`;
+                  case "ZA":
+                    return `R ${product.priceZAR.toLocaleString()}`;
+                  case "US":
+                    return `$ ${(product.priceZAR / 18).toFixed(2)}`;
+                  case "GB":
+                    return `£ ${(product.priceZAR / 22).toFixed(2)}`;
+                  case "EU":
+                    return `€ ${(product.priceZAR / 20).toFixed(2)}`;
+                  case "KE":
+                    return `KES ${(product.priceZAR * 8).toLocaleString()}`;
+                  default:
+                    return `MWK ${product.priceMWK.toLocaleString()}`;
+                }
+              };
 
               return (
                 <SlideUp key={product.id} delay={index * 0.1}>
@@ -228,7 +265,7 @@ export default function ProductsPage() {
                       </p>
 
                       <p className="mt-4 font-semibold text-gray-900">
-                        {price}
+                        {getPrice()}
                       </p>
 
                       <p className="text-xs text-gray-500 mt-2">

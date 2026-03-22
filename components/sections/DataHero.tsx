@@ -1,10 +1,10 @@
 "use client"
 
-export default function CallHero() {
+export default function DataHero() {
   return (
     <section
       className="relative py-40 text-white bg-cover bg-center"
-      style={{ backgroundImage: "url('/call.jpg')" }}
+      style={{ backgroundImage: "url('/data.jpg')" }}
     >
 
       {/* Overlay */}
@@ -13,16 +13,16 @@ export default function CallHero() {
       <div className="relative max-w-7xl mx-auto px-6 text-center">
 
         <h1 className="text-5xl font-bold mb-6">
-          Call Center & Cybersecurity Support
+          Data Sanitization & Secure Erasure
         </h1>
 
         <p className="text-lg text-gray-200 max-w-2xl mx-auto">
-          Providing real-time support, secure communication systems, and
-          expert guidance to protect your business and customers.
+          Ensure sensitive data is permanently destroyed before disposal,
+          resale, or system reuse — meeting security and compliance standards.
         </p>
 
         <p className="mt-4 text-blue-300 font-semibold">
-          “Secure Communication. Reliable Support.”
+          “Compliance + Data Protection Service”
         </p>
 
       </div>
