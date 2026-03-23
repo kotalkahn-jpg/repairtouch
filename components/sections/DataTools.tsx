@@ -78,27 +78,7 @@ export default function DataTools() {
         </div>
 
 
-        {/* CTA */}
-        <div className="mt-20 bg-blue-600 text-white rounded-2xl p-10 text-center">
-
-          <h3 className="text-2xl font-semibold mb-4">
-            Don’t Risk Leaving Sensitive Data Behind
-          </h3>
-
-          <p className="text-red-100 max-w-2xl mx-auto mb-6">
-            Deleted data can still be recovered if not properly sanitized. Protect your
-            organization from data breaches, legal risks, and compliance issues.
-          </p>
-
-          <motion.button
-            animate={{ scale: [1, 1.06, 1] }}
-            transition={{ duration: 1.2, repeat: Infinity }}
-            className="bg-white text-red-600 px-6 py-3 rounded-md font-semibold hover:bg-gray-100"
-          >
-            Request Data Sanitization Quote
-          </motion.button>
-
-        </div>
+       
 
       </div>
 

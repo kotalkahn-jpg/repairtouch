@@ -79,7 +79,7 @@ const products = [
 export default function ProductsPage() {
 
   const [filter, setFilter] = useState("all");
-  const [region, setRegion] = useState<Region>("MW");
+  const [region, setRegion] = useState<Region>("ZA");
 
   // 🔥 Load saved region
   useEffect(() => {
@@ -177,8 +177,8 @@ export default function ProductsPage() {
             <div className="flex items-center gap-2 border px-3 py-1 rounded text-sm flex-wrap">
 
               {[
+                 { code: "ZA", label: "🇿🇦 ZAR" },
                 { code: "MW", label: "🇲🇼 MWK" },
-                { code: "ZA", label: "🇿🇦 ZAR" },
                 { code: "US", label: "🇺🇸 USD" },
                 { code: "GB", label: "🇬🇧 GBP" },
                 { code: "EU", label: "🇪🇺 EUR" },

@@ -34,7 +34,7 @@ export default function ContactSection() {
 
               <div>
                 <p className="text-sm text-gray-500">Phone</p>
-                <p className="font-medium">+265 XXX XXX XXX</p>
+                <p className="font-medium"> XXX XXX XXX</p>
               </div>
 
             </div>
