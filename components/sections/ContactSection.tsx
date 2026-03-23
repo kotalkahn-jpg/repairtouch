@@ -34,7 +34,7 @@ export default function ContactSection() {
 
               <div>
                 <p className="text-sm text-gray-500">Phone</p>
-                <p className="font-medium"> XXX XXX XXX</p>
+                
               </div>
 
             </div>
@@ -49,7 +49,7 @@ export default function ContactSection() {
 
               <div>
                 <p className="text-sm text-gray-500">Email</p>
-                <p className="font-medium">info@repairtouch.com</p>
+                
               </div>
 
             </div>
@@ -64,7 +64,7 @@ export default function ContactSection() {
 
               <div>
                 <p className="text-sm text-gray-500">Location</p>
-                <p className="font-medium">Lilongwe, Malawi</p>
+                
               </div>
 
             </div>

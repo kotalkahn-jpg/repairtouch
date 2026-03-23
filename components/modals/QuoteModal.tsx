@@ -55,7 +55,7 @@ export default function QuoteModal({ close }: { close: () => void }) {
 
             <input
               type="tel"
-              placeholder="+265 Phone Number"
+              placeholder=" Phone Number"
               className="w-full border p-3 rounded-md"
               required
             />

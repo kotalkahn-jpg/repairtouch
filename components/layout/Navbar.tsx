@@ -17,7 +17,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const pathname = usePathname()
 
-  const isActive = (path :string) => pathname === path
+  const isActive = (path: string) => pathname === path
 
   return (
     <div className="absolute top-8 left-0 w-full flex justify-center z-[200]">
@@ -78,8 +78,6 @@ export default function Navbar() {
           {[
             { name: "VoIP Hosting", link: "/voip-hosting" },
             { name: "Web Hosting", link: "/web-hosting" },
-            { name: "Data Sanitization", link: "/data-sanitization" },
-            { name: "Online Shop", link: "/products" },
           ].map((item, i) => (
             <Link
               key={i}
@@ -93,6 +91,49 @@ export default function Navbar() {
               {item.name}
             </Link>
           ))}
+
+
+          {/* ✅ DATA SANITIZATION DROPDOWN */}
+          <div className="relative group">
+            <div className={`flex items-center gap-1 cursor-pointer transition ${
+              isActive("/data-sanitization") || isActive("/refurbishment-services")
+                ? "text-blue-700"
+                : "text-gray-700 hover:text-blue-700"
+            }`}>
+              Data Sanitization <ChevronDown size={16} />
+            </div>
+
+            <div className="absolute top-10 left-0 bg-white shadow-lg rounded-md py-3 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+
+              <Link href="/data-sanitization"
+                className={`block px-4 py-2 ${
+                  isActive("/data-sanitization") ? "bg-blue-50" : "hover:bg-gray-100"
+                }`}>
+                Data Sanitization
+              </Link>
+
+              <Link href="/refurbishment-services"
+                className={`block px-4 py-2 ${
+                  isActive("/refurbishment-services") ? "bg-blue-50" : "hover:bg-gray-100"
+                }`}>
+                Refurbishment Services
+              </Link>
+
+            </div>
+          </div>
+
+
+          {/* ONLINE SHOP */}
+          <Link
+            href="/products"
+            className={`transition ${
+              isActive("/products")
+                ? "text-blue-700"
+                : "text-gray-700 hover:text-blue-700"
+            }`}
+          >
+            Online Shop
+          </Link>
 
 
           {/* CALL CENTER DROPDOWN */}
@@ -156,6 +197,7 @@ export default function Navbar() {
             { name: "VoIP Hosting", link: "/voip-hosting" },
             { name: "Web Hosting", link: "/web-hosting" },
             { name: "Data Sanitization", link: "/data-sanitization" },
+            { name: "Refurbishment Services", link: "/refurbishment-services" },
             { name: "Online Shop", link: "/products" },
             { name: "Call Center", link: "/learning" },
             { name: "Contact", link: "/contact" },
