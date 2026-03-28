@@ -8,11 +8,13 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
 });
-
 export const metadata: Metadata = {
   title: "RepairTouch",
   description: "Professional IT Repair and Technology Solutions",
-};
+  icons: {
+    icon: "/favicon.ico",
+  },
+}
 
 export default function RootLayout({
   children,
