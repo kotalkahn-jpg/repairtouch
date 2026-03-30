@@ -3,20 +3,37 @@
 import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { useRef, useEffect } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+
 import { Button } from "@/components/ui/button"
 import {
   Menu,
   X,
   ChevronDown,
+  ChevronRight, // ✅ ADD THIS
   Server,
   Globe
 } from "lucide-react"
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+const [voipMenu, setVoipMenu] = useState({
+  open: false,
+  
+})
+const [voipOpen, setVoipOpen] = useState(false)
+const [activePanel, setActivePanel] = useState<string | null>(null)
+const [level1, setLevel1] = useState<string | null>(null)
+const [level2, setLevel2] = useState<string | null>(null)
   const pathname = usePathname()
 
   const isActive = (path: string) => pathname === path
+
+  const voipRef = useRef<HTMLDivElement | null>(null)
+let timeout: NodeJS.Timeout
+
+
 
   return (
     <div className="absolute top-8 left-0 w-full flex justify-center z-[200]">
@@ -29,6 +46,114 @@ export default function Navbar() {
 
         {/* DESKTOP NAV */}
         <div className="hidden md:flex items-center gap-6 text-sm font-medium">
+
+<div className="relative">
+
+  {/* TRIGGER */}
+  <div
+    onClick={() => setVoipOpen(!voipOpen)}
+    className="flex items-center gap-1 cursor-pointer text-gray-700 hover:text-blue-700"
+  >
+    VoIP Hosting <ChevronDown size={16} />
+  </div>
+
+  {/* WRAPPER (important for side-by-side layout) */}
+  {voipOpen && (
+    <div className="absolute top-12 left-0 flex gap-2 z-50">
+
+      {/* LEFT PANEL */}
+      <div className="w-64 bg-white rounded-xl shadow-xl p-2 space-y-1">
+
+        <Link href="/voip-hosting" className="block px-3 py-2 hover:bg-gray-100 rounded-md">
+          voip hosting
+        </Link>
+
+        <div
+          onClick={() => setActivePanel("bps")}
+          className="flex justify-between items-center px-3 py-2 rounded-md hover:bg-gray-100 cursor-pointer"
+        >
+          Business Phone System
+          <ChevronRight size={16} />
+        </div>
+
+        <div
+          onClick={() => setActivePanel("linkus")}
+          className="flex justify-between items-center px-3 py-2 rounded-md hover:bg-gray-100 cursor-pointer"
+        >
+          Linkus UC Clients
+          <ChevronRight size={16} />
+        </div>
+
+         <div
+          onClick={() => setActivePanel("products")}
+          className="flex justify-between items-center px-3 py-2 rounded-md hover:bg-gray-100 cursor-pointer"
+        >
+          more products
+          <ChevronRight size={16} />
+        </div>
+
+        <Link href="/voip/central-management" className="block px-3 py-2 hover:bg-gray-100 rounded-md">
+          Central Management
+        </Link>
+
+        <Link href="/voip/manage-monitor" className="block px-3 py-2 hover:bg-gray-100 rounded-md">
+          Manage & Monitor
+        </Link>
+      </div>
+
+      {/* RIGHT PANEL (DYNAMIC) */}
+      {activePanel === "bps" && (
+        <div className="w-72 bg-white rounded-xl shadow-xl p-3 space-y-4">
+
+          <div>
+            <p className="text-xs text-gray-500 mb-1">By Edition</p>
+            <Link href="/cloud" className="block py-1 hover:text-blue-700">Cloud</Link>
+            <Link href="/software" className="block py-1 hover:text-blue-700">Software</Link>
+            <Link href="/appliance" className="block py-1 hover:text-blue-700">Appliance</Link>
+          </div>
+
+          <div>
+            <p className="text-xs text-gray-500 mb-1">By Size</p>
+            <Link href="/small" className="block py-1 hover:text-blue-700">Small</Link>
+            <Link href="/medium" className="block py-1 hover:text-blue-700">Medium</Link>
+            <Link href="/enterprise" className="block py-1 hover:text-blue-700">Enterprise</Link>
+          </div>
+
+          <div>
+            <p className="text-xs text-gray-500 mb-1">By Deployment</p>
+            <Link href="/cloud-deploy" className="block py-1 hover:text-blue-700">Cloud</Link>
+            <Link href="/onprem" className="block py-1 hover:text-blue-700">On-Premise</Link>
+          </div>
+
+        </div>
+      )}
+
+      {activePanel === "linkus" && (
+        <div className="w-72 bg-white rounded-xl shadow-xl p-3 space-y-2">
+          <Link href="/web" className="block py-1 hover:text-blue-700">
+            Web Client
+          </Link>
+          <Link href="/mobile" className="block py-1 hover:text-blue-700">
+            Mobile App
+          </Link>
+          <Link href="/desktop" className="block py-1 hover:text-blue-700">
+            Desktop App
+          </Link>
+        </div>
+      )}
+
+      {activePanel === "products" && (
+        <div className="w-72 bg-white rounded-xl shadow-xl p-3 space-y-2">
+          <Link href="/voipgate" className="block py-1 hover:text-blue-700">
+            VOIPGateway
+          </Link>
+          
+        </div>
+      )}
+
+    </div>
+  )}
+</div>
 
           {/* SOLUTIONS MEGA MENU */}
           <div className="relative group">
@@ -73,7 +198,7 @@ export default function Navbar() {
 
           {/* TOP LEVEL LINKS */}
           {[
-            { name: "VoIP Hosting", link: "/voip-hosting" },
+            
             { name: "Website & Design", link: "/web-hosting" },
           ].map((item, i) => (
             <Link
@@ -88,6 +213,7 @@ export default function Navbar() {
               {item.name}
             </Link>
           ))}
+
 
           {/* DATA SANITIZATION DROPDOWN */}
           <div className="relative group">
@@ -147,7 +273,7 @@ export default function Navbar() {
                 href="/learning"
                 className={`block px-4 py-2 ${
                   isActive("/learning") ? "bg-blue-50" : "hover:bg-gray-100"
-                }`}
+                }`} 
               >
                 Call Center
               </Link>
@@ -159,6 +285,24 @@ export default function Navbar() {
                 }`}
               >
                 Contact
+              </Link>
+              
+               <Link
+                href="/inbound"
+                className={`block px-4 py-2 ${
+                  isActive("/inbound") ? "bg-blue-50" : "hover:bg-gray-100"
+                }`}
+              >
+                inbound call center
+              </Link>
+
+              <Link
+                href="/outbound"
+                className={`block px-4 py-2 ${
+                  isActive("/outbound") ? "bg-blue-50" : "hover:bg-gray-100"
+                }`}
+              >
+                outbound call center
               </Link>
             </div>
           </div>
@@ -216,7 +360,7 @@ export default function Navbar() {
             { name: "Solutions", link: "/services" },
             { name: "Specialized Solutions", link: "/business-it" },
             { name: "VoIP Hosting", link: "/voip-hosting" },
-            { name: "Website & Design", link: "/website-hosting" },
+            { name: "Website & Design", link: "/web-hosting" },
             { name: "Data Sanitization", link: "/data-sanitization" },
             { name: "Refurbishment Services", link: "/refurbishment-services" },
             { name: "Online Shop", link: "/products" },
@@ -248,6 +392,6 @@ export default function Navbar() {
           </div>
         </div>
       )}
-    </div>
+    </div>  
   )
 }
