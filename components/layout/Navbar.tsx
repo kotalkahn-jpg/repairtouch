@@ -33,6 +33,22 @@ const [level2, setLevel2] = useState<string | null>(null)
   const voipRef = useRef<HTMLDivElement | null>(null)
 let timeout: NodeJS.Timeout
 
+useEffect(() => {
+  function handleClickOutside(event: MouseEvent) {
+    if (voipRef.current && !voipRef.current.contains(event.target as Node)) {
+      setVoipOpen(false)
+      setActivePanel(null) // optional: reset submenu
+    }
+  }
+
+  document.addEventListener("mousedown", handleClickOutside)
+
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside)
+  }
+}, [])
+
+
 
 
   return (
@@ -47,7 +63,7 @@ let timeout: NodeJS.Timeout
         {/* DESKTOP NAV */}
         <div className="hidden md:flex items-center gap-6 text-sm font-medium">
 
-<div className="relative">
+<div ref={voipRef} className="relative">
 
   {/* TRIGGER */}
   <div
