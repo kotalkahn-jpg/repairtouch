@@ -163,6 +163,30 @@ useEffect(() => {
           <Link href="/voipgate" className="block py-1 hover:text-blue-700">
             VOIPGateway
           </Link>
+           <Link href="/Fanvil" className="block py-1 hover:text-blue-700">
+           Fanvil
+          </Link>
+          <Link href="/Fanvil" className="block py-1 hover:text-blue-700">
+           cisco
+          </Link>
+          <Link href="/Fanvil" className="block py-1 hover:text-blue-700">
+            Yealink
+          </Link>
+          <Link href="/Fanvil" className="block py-1 hover:text-blue-700">
+           yeastar
+          </Link>
+          <Link href="/Fanvil" className="block py-1 hover:text-blue-700">
+           Jabra
+          </Link>
+          <Link href="/Fanvil" className="block py-1 hover:text-blue-700">
+           grandream
+          </Link>
+          <Link href="/Fanvil" className="block py-1 hover:text-blue-700">
+          Erickson
+          </Link>
+          <Link href="/Fanvil" className="block py-1 hover:text-blue-700">
+          snom
+          </Link>
           
         </div>
       )}
