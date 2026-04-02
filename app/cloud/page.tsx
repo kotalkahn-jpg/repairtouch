@@ -1,7 +1,8 @@
 import HeroSection from "@/components/sections/HeroSection"
 import ImageGridFeature from "@/components/sections/ImageGridFeature"
+import CloudIn from "@/components/sections/CloudIn"
 import Image from "next/image"
-import { CheckCircle, Shield, Zap } from "lucide-react"
+import { CheckCircle, CloudIcon, Shield, Zap } from "lucide-react"
 export default function HostingPage() {
   return (
     <>
@@ -14,6 +15,8 @@ export default function HostingPage() {
       <br></br><br></br><br></br><br></br><br></br>
 
        <ImageGridFeature />
+
+       <CloudIn/>
       
     </>
   )

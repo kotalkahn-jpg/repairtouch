@@ -108,13 +108,11 @@ useEffect(() => {
           <ChevronRight size={16} />
         </div>
 
-        <Link href="/voip/central-management" className="block px-3 py-2 hover:bg-gray-100 rounded-md">
-          Central Management
+        <Link href="/central-management" className="block px-3 py-2 hover:bg-gray-100 rounded-md">
+          CENTRAL MANAGEMENT
         </Link>
 
-        <Link href="/voip/manage-monitor" className="block px-3 py-2 hover:bg-gray-100 rounded-md">
-          Manage & Monitor
-        </Link>
+      
       </div>
 
       {/* RIGHT PANEL (DYNAMIC) */}
@@ -131,7 +129,7 @@ useEffect(() => {
           <div>
             <p className="text-xs text-gray-500 mb-1">By Size</p>
             <Link href="/small" className="block py-1 hover:text-blue-700">Small</Link>
-            <Link href="/medium" className="block py-1 hover:text-blue-700">Medium</Link>
+            
             <Link href="/enterprise" className="block py-1 hover:text-blue-700">Enterprise</Link>
           </div>
 
@@ -147,13 +145,13 @@ useEffect(() => {
       {activePanel === "linkus" && (
         <div className="w-72 bg-white rounded-xl shadow-xl p-3 space-y-2">
           <Link href="/web" className="block py-1 hover:text-blue-700">
-            Web Client
+           Linkus Web Client
           </Link>
           <Link href="/mobile" className="block py-1 hover:text-blue-700">
-            Mobile App
+            Linkus Mobile client
           </Link>
           <Link href="/desktop" className="block py-1 hover:text-blue-700">
-            Desktop App
+            Linkus Desktop Client
           </Link>
         </div>
       )}

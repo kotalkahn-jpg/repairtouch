@@ -3,192 +3,360 @@
 import Image from "next/image"
 import FadeIn from "@/components/animations/FadeIn"
 import SlideUp from "@/components/animations/SlideUp"
+import HeroSection from "@/components/sections/HeroSection"
+import { useState } from "react"
+import {
+  Building2, Globe, Headphones, Network
+} from "lucide-react"
+
+const filters = [
+    {
+      title: "Call to Departments",
+      icon: <Building2 size={18} />,
+      description:
+        "Route calls intelligently across departments with advanced IVR and dial-by-name features. Ensure every team is reachable and communication flows efficiently.",
+      points: [
+        "Up to 1,000 concurrent calls",
+        "Department-based routing",
+        "Smart IVR navigation",
+      ],
+      image: "/images/pbx-dashboard.png",
+    },
+    {
+      title: "Multi-Site & Global Communication",
+      icon: <Globe size={18} />,
+      description:
+        "Connect multiple offices and teams globally under one unified communication system. Maintain seamless collaboration across locations.",
+      points: [
+        "Global office connectivity",
+        "Centralized communication",
+        "Cross-location call routing",
+      ],
+      image: "/images/global.png",
+    },
+    {
+      title: "Call Center",
+      icon: <Headphones size={18} />,
+      description:
+        "Build and manage powerful call center operations with queue management, monitoring, and performance tracking tools.",
+      points: [
+        "Queue management",
+        "Real-time monitoring",
+        "Agent performance tracking",
+      ],
+      image: "/images/callcenter.png",
+    },
+    {
+      title: "Interconnected Ecosystem",
+      icon: <Network size={18} />,
+      description:
+        "Integrate your communication system with CRM, helpdesk, and collaboration tools to create a unified business ecosystem.",
+      points: [
+        "CRM integrations",
+        "API & SDK access",
+        "Automation workflows",
+      ],
+      image: "/images/integration.png",
+    },
+  ]
 
 export default function CloudDeployPage() {
+  const [active, setActive] = useState(0)
+  const [mainTab, setMainTab] = useState(0)
+const [subTab, setSubTab] = useState(0)
+
+const data = [
+  {
+    name: "Business Phone",
+    sub: [
+      {
+        title: "Work from Anywhere",
+        description:
+          "Make and receive business calls with your preferred device and from anywhere. Stay connected on mobile, desktop, or browser with a consistent calling experience.",
+        points: [
+          "Up to 1,000 concurrent calls",
+          "Direct calling to users or groups",
+          "Dial from all devices",
+        ],
+        image: "/images/pbx-dashboard.png",
+      },
+      {
+        title: "Unified Communications",
+        description:
+          "Unify voice, messaging, and collaboration tools into a single platform for seamless communication.",
+        points: [
+          "Team messaging",
+          "Video conferencing",
+          "Presence status",
+        ],
+        image: "/images/unified.png",
+      },
+      {
+        title: "Call Efficiency",
+        description:
+          "Improve operational efficiency with advanced routing and automation tools.",
+        points: [
+          "Call routing",
+          "Auto attendants",
+          "Call analytics",
+        ],
+        image: "/images/efficiency.png",
+      },
+    ],
+  },
+  {
+    name: "Contact Center",
+    sub: [
+      {
+        title: "Call Queues",
+        description:
+          "Efficiently manage incoming calls with advanced queue strategies.",
+        points: [
+          "Smart routing",
+          "Agent distribution",
+          "Queue monitoring",
+        ],
+        image: "/images/callcenter.png",
+      },
+    ],
+  },
+  {
+    name: "Open Ecosystem",
+    sub: [
+      {
+        title: "Integrations",
+        description:
+          "Connect with CRM, helpdesk, and third-party tools for a complete ecosystem.",
+        points: [
+          "API access",
+          "CRM integrations",
+          "Automation workflows",
+        ],
+        image: "/images/integration.png",
+      },
+    ],
+  },
+]
   return (
-    <div className="w-full overflow-hidden">
 
-      {/* ================= HERO (PLATFORM STYLE) ================= */}
-      <section className="relative py-32 px-6 bg-gradient-to-br from-indigo-700 via-blue-600 to-indigo-800 text-white">
+     <>
+          <HeroSection
+            title="EntCloud PBX Phone System for Business"
+            description="Run your business phone system on the cloud with secure calling, unified communications, and centralized management.."
+            backgroundImage="/hosting.jpg"
+          />
 
-        <div className="max-w-6xl mx-auto text-center">
+          <section className="py-24 bg-white">
 
-          <FadeIn>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Launch Your Own UCaaS Platform
-            </h1>
-          </FadeIn>
+  <div className="max-w-7xl mx-auto px-6">
 
-          <SlideUp>
-            <p className="max-w-2xl mx-auto text-lg text-blue-100 mb-10">
-              A fully managed, turnkey cloud solution to deliver voice,
-              video, messaging, and collaboration services under your brand.
-            </p>
-          </SlideUp>
+    {/* HEADER */}
+    <div className="text-center mb-12">
+      <h2 className="text-4xl font-bold mb-4">
+        Everything You Need in a Cloud PBX
+      </h2>
+      <p className="text-gray-600 max-w-3xl mx-auto">
+        Bring telephony, contact center, and integrations together in one platform for daily business operations.
+      </p>
+    </div>
 
-          {/* FLOATING STACK (NOT CARDS GRID) */}
-          <div className="relative h-[300px] mt-12">
-            <div className="absolute left-1/2 -translate-x-1/2 top-0 bg-white text-black p-4 rounded-xl shadow-lg w-64">
-              PBX Instance
-            </div>
-            <div className="absolute left-[20%] top-20 bg-white text-black p-4 rounded-xl shadow-lg w-64">
-              Customer Portal
-            </div>
-            <div className="absolute right-[20%] top-20 bg-white text-black p-4 rounded-xl shadow-lg w-64">
-              Admin Console
-            </div>
-          </div>
+    {/* MAIN FILTER */}
+    <div className="flex justify-center mb-10">
+      {["Business Phone", "Contact Center", "Open Ecosystem"].map((item, i) => (
+        <button
+          key={i}
+          onClick={() => {
+            setMainTab(i)
+            setSubTab(0)
+          }}
+          className={`px-6 py-3 rounded-full text-sm font-medium transition ${
+            mainTab === i
+              ? "bg-blue-600 text-white"
+              : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+          }`}
+        >
+          {item}
+        </button>
+      ))}
+    </div>
 
-        </div>
-      </section>
+    {/* SUB FILTER */}
+    <div className="flex flex-wrap justify-center gap-6 mb-12">
+      {data[mainTab].sub.map((item, i) => (
+        <button
+          key={i}
+          onClick={() => setSubTab(i)}
+          className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition"
+        >
+          <span className={`w-5 h-5 rounded-full flex items-center justify-center ${
+            subTab === i ? "bg-blue-600 text-white" : "bg-gray-200"
+          }`}>
+            ✓
+          </span>
+          {item.title}
+        </button>
+      ))}
+    </div>
 
-      {/* ================= PLATFORM BLOCK ================= */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-5xl mx-auto text-center">
+    {/* CONTENT */}
+    <div className="grid md:grid-cols-2 gap-12 items-center bg-gradient-to-r from-blue-50 to-blue-100 rounded-3xl p-10">
 
-          <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              A Complete UCaaS Platform, Ready to Go
-            </h2>
-          </FadeIn>
+      {/* LEFT IMAGE */}
+      <div className="flex justify-center">
+        <img
+          src={data[mainTab].sub[subTab].image}
+          className="w-full max-w-md object-contain"
+        />
+      </div>
 
-          <SlideUp>
-            <p className="text-gray-600 text-lg">
-              Instantly deploy and manage multiple PBX instances while giving
-              each customer full control of their own communication system.
-            </p>
-          </SlideUp>
+      {/* RIGHT TEXT */}
+      <div>
 
-        </div>
-      </section>
+        <p className="text-gray-700 mb-6 leading-relaxed">
+          {data[mainTab].sub[subTab].description}
+        </p>
 
-      {/* ================= OPERATIONS PANEL ================= */}
-      <section className="py-24 px-6 bg-gray-50">
+        <ul className="space-y-4">
+          {data[mainTab].sub[subTab].points.map((point, i) => (
+            <li key={i} className="flex items-center gap-3 text-gray-800">
+              <span className="w-5 h-5 bg-green-500 rounded-full"></span>
+              {point}
+            </li>
+          ))}
+        </ul>
 
-        <div className="max-w-6xl mx-auto">
-
-          <div className="bg-white rounded-2xl shadow-xl p-10 grid md:grid-cols-2 gap-12 items-center">
-
-            <div>
-              <FadeIn>
-                <h2 className="text-3xl font-bold mb-6">
-                  Simplified Operations at Scale
-                </h2>
-              </FadeIn>
-
-              <SlideUp>
-                <ul className="space-y-4 text-gray-600">
-                  <li>• Automated provisioning for all customers</li>
-                  <li>• Bulk upgrades, backups, and restore</li>
-                  <li>• Real-time monitoring & alerts</li>
-                  <li>• One-click remote troubleshooting</li>
-                </ul>
-              </SlideUp>
-            </div>
-
-            <SlideUp>
-              <div className="relative h-80 rounded-xl overflow-hidden">
-                <Image src="/software.png" alt="Operations" fill className="object-cover"/>
-              </div>
-            </SlideUp>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ================= ARCHITECTURE (DIFFERENT STYLE) ================= */}
-      <section className="py-24 px-6 bg-black text-white">
-
-        <div className="max-w-6xl mx-auto">
-
-          <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-              Built on High-Availability Cloud Infrastructure
-            </h2>
-          </FadeIn>
-
-          {/* FLOW STYLE (NEW) */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8 text-center">
-
-            {["Users", "Internet", "Cloud Core", "PBX Instances", "Devices"].map((step, i) => (
-              <SlideUp key={i}>
-                <div className="bg-white/10 px-6 py-4 rounded-lg">
-                  {step}
-                </div>
-              </SlideUp>
-            ))}
-
-          </div>
-
-          <SlideUp>
-            <p className="text-gray-400 text-center mt-12 max-w-3xl mx-auto">
-              Powered by distributed cloud architecture with load balancing,
-              failover systems, and enterprise-grade security.
-            </p>
-          </SlideUp>
-
-        </div>
-
-      </section>
-
-      {/* ================= DEPLOYMENT (NOT GRID HEAVY) ================= */}
-      <section className="py-24 px-6 bg-white">
-
-        <div className="max-w-6xl mx-auto">
-
-          <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-              Flexible Deployment That Fits Your Strategy
-            </h2>
-          </FadeIn>
-
-          <div className="space-y-6">
-
-            {[
-              "Cloud Turnkey (Fully Managed)",
-              "Self-hosted Cloud Deployment",
-              "On-Premise Integration",
-              "Bring Your Own Infrastructure",
-            ].map((item, i) => (
-              <SlideUp key={i}>
-                <div className="p-6 border rounded-xl flex justify-between items-center hover:shadow-md transition">
-                  <span>{item}</span>
-                  <span>→</span>
-                </div>
-              </SlideUp>
-            ))}
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ================= FINAL CTA ================= */}
-      <section className="py-28 px-6 bg-gradient-to-r from-blue-600 to-indigo-700 text-white text-center">
-
-        <FadeIn>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Start Your UCaaS Business Today
-          </h2>
-        </FadeIn>
-
-        <SlideUp>
-          <p className="text-blue-100 mb-8">
-            Launch, scale, and manage your communication platform effortlessly.
-          </p>
-        </SlideUp>
-
-        <SlideUp>
-          <button className="bg-white text-blue-700 px-8 py-4 rounded-lg font-semibold">
-            Get Started
-          </button>
-        </SlideUp>
-
-      </section>
+      </div>
 
     </div>
+
+  </div>
+
+</section>
+          
+          
+    <section className="py-24 bg-gray-50">
+
+  <div className="max-w-7xl mx-auto px-6">
+
+    {/* HEADER */}
+    <div className="text-center max-w-3xl mx-auto mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        AI-Powered Cloud PBX Communication
+      </h2>
+      <p className="text-gray-600">
+        Built-in AI tools act as a virtual assistant, keeping your team productive and responsive in customer communications.
+      </p>
+    </div>
+
+    {/* GRID */}
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      {/* CARD 1 */}
+      <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+
+        <span className="text-sm text-blue-600 font-medium">
+          AI Feature
+        </span>
+
+        <h3 className="font-semibold text-lg mt-2 mb-3">
+          Voicemail & Call Transcription
+        </h3>
+
+        <p className="text-gray-600 text-sm mb-6">
+          Instantly convert voicemails and calls into text, ensuring you never miss important messages and can quickly review conversations.
+        </p>
+
+        <img
+          src="/images/transcription.png"
+          className="rounded-xl w-full object-cover"
+        />
+
+      </div>
+
+
+      {/* CARD 2 */}
+      <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+
+        <span className="text-sm text-blue-600 font-medium">
+          Transcription
+        </span>
+
+        <h3 className="font-semibold text-lg mt-2 mb-3">
+          Natural Speech Translator
+        </h3>
+
+        <p className="text-gray-600 text-sm mb-6">
+          Transform text into expressive, lifelike voice messages with natural rhythm, enabling interactive and engaging communication.
+        </p>
+
+        <img
+          src="/images/translator.png"
+          className="rounded-xl w-full object-cover"
+        />
+
+      </div>
+
+
+      {/* CARD 3 */}
+      <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+
+        <span className="text-sm text-blue-600 font-medium">
+          Translator
+        </span>
+
+        <h3 className="font-semibold text-lg mt-2 mb-3">
+          Call Summaries & Insights
+        </h3>
+
+        <p className="text-gray-600 text-sm mb-6">
+          Receive call summaries and action items immediately after each call, eliminating missed follow-ups and improving productivity.
+        </p>
+
+        <img
+          src="/images/summary.png"
+          className="rounded-xl w-full object-cover"
+        />
+
+      </div>
+
+
+      {/* CARD 4 */}
+      <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+
+        <span className="text-sm text-blue-600 font-medium">
+          Summary
+        </span>
+
+        <h3 className="font-semibold text-lg mt-2 mb-3">
+          Intelligent Communication Assistant
+        </h3>
+
+        <p className="text-gray-600 text-sm mb-6">
+          Enhance productivity with AI-powered assistance that helps teams manage conversations, extract insights, and respond faster.
+        </p>
+
+        <img
+          src="/images/ai-assistant.png"
+          className="rounded-xl w-full object-cover"
+        />
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+      
+
+      
+
+      
+
+     
+
+  
+    </>
   )
 }
