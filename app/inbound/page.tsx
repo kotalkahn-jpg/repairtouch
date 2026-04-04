@@ -8,7 +8,7 @@ export default function HostingPage() {
       <HeroSection
         title="Enterprise-Grade Phone System for Modern Businesses"
         description="Unified communication, centralized management, and enterprise-level reliability, ensuring stable, scalable, and secure communication across every branch."
-        backgroundImage="/hosting.jpg"
+        backgroundImage="/pages/inbound.webp "
       />
 <br></br><br></br>
       <section className="w-full bg-white py-20 px-6 md:px-12 lg:px-20">
@@ -23,7 +23,7 @@ export default function HostingPage() {
 
     {/* Card 1 */}
     <div className="bg-gray-50 rounded-2xl overflow-hidden">
-      <img src="/images/omnichannel.png" className="w-full h-56 object-cover" />
+      <img src="/pages/messaging.webp" className="w-full h-56 object-cover" />
       <div className="p-6">
         <h3 className="text-xl font-semibold text-slate-900">
           Omnichannel Messaging
@@ -41,7 +41,7 @@ export default function HostingPage() {
 
     {/* Card 2 */}
     <div className="bg-gray-50 rounded-2xl overflow-hidden">
-      <img src="/images/crm.png" className="w-full h-56 object-cover" />
+      <img src="/pages/erp.webp" className="w-full h-56 object-cover" />
       <div className="p-6">
         <h3 className="text-xl font-semibold text-slate-900">
           CRM Integration
@@ -58,7 +58,7 @@ export default function HostingPage() {
 
     {/* Card 3 */}
     <div className="bg-gray-50 rounded-2xl overflow-hidden">
-      <img src="/images/outbound.png" className="w-full h-56 object-cover" />
+      <img src="/pages/outbound.webp" className="w-full h-56 object-cover" />
       <div className="p-6">
         <h3 className="text-xl font-semibold text-slate-900">
           Outbound Call Center
@@ -114,7 +114,7 @@ export default function HostingPage() {
 
     {/* Image */}
     <div>
-      <img src="/images/wallboard.png" className="rounded-2xl w-full" />
+      <img src="/pages/per.webp" className="rounded-2xl w-full" />
     </div>
 
   </div>
@@ -145,7 +145,7 @@ export default function HostingPage() {
 
     {/* Image */}
     <div>
-      <img src="/images/sla.png" className="rounded-2xl w-full" />
+      <img src="/pages/callw.webp" className="rounded-2xl w-full" />
     </div>
 
   </div>
@@ -189,7 +189,7 @@ export default function HostingPage() {
 
     {/* Image */}
     <div>
-      <img src="/images/agents.png" className="rounded-2xl w-full" />
+      <img src="/pages/adver.webp" className="rounded-2xl w-full" />
     </div>
 
   </div>
@@ -203,7 +203,7 @@ export default function HostingPage() {
 
     {/* Image */}
     <div>
-      <img src="/images/agent.png" className="rounded-2xl w-full" />
+      <img src="/pages/black.webp" className="rounded-2xl w-full" />
     </div>
 
     {/* Text */}

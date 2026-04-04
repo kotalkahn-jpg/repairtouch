@@ -1,5 +1,6 @@
 import HeroSection from "@/components/sections/HeroSection"
 import ProductFilter from "@/components/ProductFilter"
+import CTASection from "@/components/sections/CTASection"
 export default function HostingPage() {
   return (
     <>
@@ -7,7 +8,7 @@ export default function HostingPage() {
         title="On-Premise
 IP PBX System"
         description="A reliable, secure, and feature-rich IP PBX system for SMBs. Unify business communication and customer engagement in one platform."
-        backgroundImage="/hosting.jpg"
+        backgroundImage="/pages/telephone.webp"
       />
 <br></br><br></br><br></br>
     
@@ -72,7 +73,7 @@ IP PBX System"
     {/* RIGHT SIDE (IMAGE) */}
     <div className="flex justify-center">
       <img
-        src="/images/pbx-modular.png"
+        src="/pages/mode.png"
         alt="Flexible Modular Design"
         className="w-full max-w-md object-contain"
       />
@@ -85,97 +86,137 @@ IP PBX System"
 
 <section className="py-24 bg-gray-50">
 
-  <div className="max-w-7xl mx-auto px-6">
+ <div className="max-w-7xl mx-auto px-6">
 
-    {/* GRID */}
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+  {/* GRID */}
+  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-      {/* CARD 1 */}
-      <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition group">
+    {/* CARD 1 */}
+    <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition group">
 
-        {/* IMAGE */}
-        <div className="relative mb-6">
-          <img
-            src="/images/linkus.png"
-            alt="Linkus UC Clients"
-            className="rounded-xl w-full object-cover"
-          />
+      {/* IMAGE */}
+      <div className="relative mb-6 h-40 md:h-48 lg:h-56 overflow-hidden rounded-xl">
+        <img
+          src="/pages/linkus.webp"
+          alt="Linkus UC Clients"
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
 
-          {/* OPTIONAL ICON OVERLAY */}
-          <div className="absolute top-4 right-4 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center shadow">
-            ★
-          </div>
+        {/* OPTIONAL ICON OVERLAY */}
+        <div className="absolute top-4 right-4 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center shadow animate-bounce">
+          ★
         </div>
-
-        {/* TITLE */}
-        <h3 className="text-xl font-semibold mb-3 text-gray-900">
-          Linkus UC Clients
-        </h3>
-
-        {/* DESCRIPTION */}
-        <p className="text-gray-600 leading-relaxed">
-          Feature-rich UC app for seamless collaboration. Available on web, desktop, and mobile, keeping your team connected anywhere.
-        </p>
-
       </div>
 
+      {/* TITLE */}
+      <h3 className="text-xl font-semibold mb-3 text-gray-900">
+        Linkus UC Clients
+      </h3>
 
-      {/* CARD 2 */}
-      <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition group">
+      {/* DESCRIPTION */}
+      <p className="text-gray-600 leading-relaxed">
+        Feature-rich UC app for seamless collaboration. Available on web, desktop, and mobile, keeping your team connected anywhere.
+      </p>
 
-        {/* IMAGE */}
-        <div className="mb-6">
-          <img
-            src="/images/operator.png"
-            alt="Operator Panel"
-            className="rounded-xl w-full object-cover"
-            
-          />
-          
-        </div>
+    </div>
 
-        {/* TITLE */}
-        <h3 className="text-xl font-semibold mb-3 text-gray-900">
-          Operator Panel
-        </h3>
 
-        {/* DESCRIPTION */}
-        <p className="text-gray-600 leading-relaxed">
-          Gain real-time visibility into call flows and dispatch calls with ease using an intuitive drag-and-drop interface.
-        </p>
+    {/* CARD 2 */}
+    <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition group">
 
+      {/* IMAGE */}
+      <div className="mb-6 h-40 md:h-48 lg:h-56 overflow-hidden rounded-xl">
+        <img
+          src="/pages/Operator.webp"
+          alt="Operator Panel"
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        
+        
       </div>
 
+      {/* TITLE */}
+      <h3 className="text-xl font-semibold mb-3 text-gray-900">
+        Operator Panel
+      </h3>
 
-      {/* CARD 3 */}
-      <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition group">
+      {/* DESCRIPTION */}
+      <p className="text-gray-600 leading-relaxed">
+        Gain real-time visibility into call flows and dispatch calls with ease using an intuitive drag-and-drop interface.
+      </p>
 
-        {/* IMAGE */}
-        <div className="mb-6">
-          <img
-            src="/images/callcenter.png"
-            alt="Call Center Console"
-            className="rounded-xl w-full object-cover"
-          />
+      {/* OPTIONAL ICON OVERLAY */}
+        <div className="absolute top-4 right-4 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center shadow animate-bounce">
+          ★
         </div>
 
-        {/* TITLE */}
-        <h3 className="text-xl font-semibold mb-3 text-gray-900">
-          Call Center Console
-        </h3>
+    </div>
 
-        {/* DESCRIPTION */}
-        <p className="text-gray-600 leading-relaxed">
-          Equip agents and supervisors with powerful tools like IVR, wallboards, and real-time analytics for better performance.
-        </p>
 
+    {/* CARD 3 */}
+    <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition group">
+
+      {/* IMAGE */}
+      <div className="mb-6 h-40 md:h-48 lg:h-56 overflow-hidden rounded-xl">
+        <img
+          src="/pages/voip.webp"
+          alt="Call Center Console"
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+
+        {/* OPTIONAL ICON OVERLAY */}
+        <div className="absolute top-4 right-4 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center shadow animate-bounce">
+          ★
+        </div>
       </div>
+
+      {/* TITLE */}
+      <h3 className="text-xl font-semibold mb-3 text-gray-900">
+        Call Center Console
+      </h3>
+
+      {/* DESCRIPTION */}
+      <p className="text-gray-600 leading-relaxed">
+        Equip agents and supervisors with powerful tools like IVR, wallboards, and real-time analytics for better performance.
+      </p>
+
+    </div>
+
+     {/* CARD 3 */}
+    <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition group">
+
+      {/* IMAGE */}
+      <div className="mb-6 h-40 md:h-48 lg:h-56 overflow-hidden rounded-xl">
+        <img
+          src="/pages/voip.webp"
+          alt="Call Center Console"
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+
+        {/* OPTIONAL ICON OVERLAY */}
+        <div className="absolute top-4 right-4 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center shadow animate-bounce">
+          ★
+        </div>
+      </div>
+
+      {/* TITLE */}
+      <h3 className="text-xl font-semibold mb-3 text-gray-900">
+        Call Center Console
+      </h3>
+
+      {/* DESCRIPTION */}
+      <p className="text-gray-600 leading-relaxed">
+        Equip agents and supervisors with powerful tools like IVR, wallboards, and real-time analytics for better performance.
+      </p>
 
     </div>
 
   </div>
 
+</div>
 </section>
+
+<CTASection/>
 
 
     </>

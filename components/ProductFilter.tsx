@@ -9,7 +9,7 @@ const products = [
     description:
       "Entry-level IP PBX ideal for small businesses. Supports essential call features with reliable performance.",
     users: "Up to 20 users",
-    image: "/sections/route.png",
+    image: "/services/p570.png",
     specs: {
       Storage: "32GB",
       Calls: "10 concurrent",
@@ -22,7 +22,7 @@ const products = [
     description:
       "Mid-range solution with advanced call handling, IVR, and integration capabilities.",
     users: "Up to 50 users",
-    image: "/sections/ppp.png",
+    image: "/services/pp.png",
     specs: {
       Storage: "64GB",
       Calls: "25 concurrent",

@@ -29,7 +29,7 @@ export default function HostingPage() {
       <HeroSection
         title="Esoftware"
         description="Unified communication, centralized management, and enterprise-level reliability, ensuring stable, scalable, and secure communication across every branch."
-        backgroundImage="/hosting.jpg"
+        backgroundImage="pages/soft.jpg"
       />
 
  <SoftMore/>

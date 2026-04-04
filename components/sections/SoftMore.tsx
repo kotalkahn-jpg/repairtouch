@@ -183,7 +183,7 @@ export default function SoftMore() {
   {/* RIGHT SIDE (IMAGE) */}
   <div>
     <img
-      src="/services/2003.i105.032..isometric computer repair service horizontal illustration.jpg"
+      src="/pages/done.jpg"
       alt="Digital Solutions"
       className="rounded-2xl shadow-lg w-full object-cover"
     />

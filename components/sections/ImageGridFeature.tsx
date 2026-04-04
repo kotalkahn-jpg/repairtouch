@@ -34,7 +34,7 @@ export default function ImageGridFeature() {
           {/* BIG IMAGE */}
           <div className="col-span-2 row-span-2 relative rounded-2xl overflow-hidden">
             <Image
-              src="/services/security.jpg"
+              src="/pages/watched-cloud.jpg"
               alt="Main"
               fill
               sizes="(max-width: 400px) 20vw, 30vw"
@@ -46,7 +46,8 @@ export default function ImageGridFeature() {
           {/* SMALL */}
           <div className="relative rounded-2xl overflow-hidden">
             <Image
-              src="/services/security.jpg"
+              src="/pages/happy.jpg"
+              
               alt="Small 1"
               fill
               sizes="200px"
@@ -57,7 +58,8 @@ export default function ImageGridFeature() {
           {/* SMALL */}
           <div className="relative rounded-2xl overflow-hidden">
             <Image
-              src="/services/security.jpg"
+              src="/pages/grow.jpg"
+            
               alt="Small 2"
               fill
               sizes="200px"
@@ -68,7 +70,8 @@ export default function ImageGridFeature() {
           {/* WIDE */}
           <div className="col-span-2 relative rounded-2xl overflow-hidden">
             <Image
-              src="/services/security.jpg"
+              src="/pages/net.jpg"
+             
               alt="Wide"
               fill
               sizes="400px"

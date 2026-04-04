@@ -13,7 +13,7 @@ export default function SmallPage() {
     <HeroSection
             title="Yeastar for Small Business"
             description="Unified communication, centralized management, and enterprise-level reliability, ensuring stable, scalable, and secure communication across every branch."
-            backgroundImage="/"
+            backgroundImage="pages/male.jpg"
           />
 
     <SmallServe/>

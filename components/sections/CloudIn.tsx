@@ -13,17 +13,17 @@ export default function HostingCore() {
     {
       title: "Grow Your Business",
       desc: "Package your own SIP trunking & other services, set your own prices, and have complete customer ownship. We support you in full..",
-      image: "/services/under2.webp",
+      image: "/pages/grow.jpg",
     },
     {
       title: "Reliable Cloud",
       desc: "Hosted in our cloud or yours. 99.99% reliability, 24/7 monitoring, and multi-layer security ensures your customers are always online.",
-      image: "/services/under2.webp",
+     image: "/pages/3d.jpg",
     },
     {
       title: "Easy White Label",
       desc: "Swiftly establish your brand in the market. Rebrand the solution with point-and-click white-label settings that go live immediately..",
-      image: "/services/under2.webp",
+      image: "/pages/white.jpg",
     },
   ]
 
@@ -200,5 +200,6 @@ export default function HostingCore() {
       </AnimatePresence>
 
     </section>
+    
   )
 }

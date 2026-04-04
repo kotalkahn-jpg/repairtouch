@@ -8,6 +8,7 @@ import { useState } from "react"
 import {
   Building2, Globe, Headphones, Network
 } from "lucide-react"
+import CTASection from "@/components/sections/CTASection"
 
 const filters = [
     {
@@ -44,7 +45,7 @@ const filters = [
         "Real-time monitoring",
         "Agent performance tracking",
       ],
-      image: "/images/callcenter.png",
+      image: "/pages/callcenter.png",
     },
     {
       title: "Interconnected Ecosystem",
@@ -78,7 +79,7 @@ const data = [
           "Direct calling to users or groups",
           "Dial from all devices",
         ],
-        image: "/images/pbx-dashboard.png",
+        image: "/pages/phone.jpg",
       },
       {
         title: "Unified Communications",
@@ -89,7 +90,7 @@ const data = [
           "Video conferencing",
           "Presence status",
         ],
-        image: "/images/unified.png",
+        image: "/pages/cont.jpg",
       },
       {
         title: "Call Efficiency",
@@ -100,7 +101,7 @@ const data = [
           "Auto attendants",
           "Call analytics",
         ],
-        image: "/images/efficiency.png",
+        image: "/pages/cloudit.jpg",
       },
     ],
   },
@@ -116,7 +117,7 @@ const data = [
           "Agent distribution",
           "Queue monitoring",
         ],
-        image: "/images/callcenter.png",
+        image: "/pages/cont.jpg",
       },
     ],
   },
@@ -132,7 +133,7 @@ const data = [
           "CRM integrations",
           "Automation workflows",
         ],
-        image: "/images/integration.png",
+        image: "/pages/cont.jpg",
       },
     ],
   },
@@ -267,7 +268,7 @@ const data = [
         </p>
 
         <img
-          src="/images/transcription.png"
+          src="/pages/AI.webp"
           className="rounded-xl w-full object-cover"
         />
 
@@ -290,7 +291,7 @@ const data = [
         </p>
 
         <img
-          src="/images/translator.png"
+          src="/pages/quote.webp"
           className="rounded-xl w-full object-cover"
         />
 
@@ -313,7 +314,7 @@ const data = [
         </p>
 
         <img
-          src="/images/summary.png"
+          src="/pages/translator.webp"
           className="rounded-xl w-full object-cover"
         />
 
@@ -336,13 +337,15 @@ const data = [
         </p>
 
         <img
-          src="/images/ai-assistant.png"
+          src="/pages/assistant.webp"
           className="rounded-xl w-full object-cover"
         />
 
       </div>
 
     </div>
+
+   <CTASection/> 
 
   </div>
 

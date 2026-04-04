@@ -21,7 +21,7 @@ export default function HostingPage() {
       <HeroSection
         title="central-management"
         description="Unified communication, centralized management, and enterprise-level reliability, ensuring stable, scalable, and secure communication across every branch."
-        backgroundImage="/hosting.jpg"
+        backgroundImage="/pages/icon.webp"
       />
 
 <br></br><br></br>
@@ -48,7 +48,7 @@ export default function HostingPage() {
     {/* Image */}
     <div className="relative">
       <img
-        src="/images/cloud-pbx.png"
+        src="/pages/software.webp"
         alt="Cloud PBX"
         className="rounded-2xl w-full object-cover"
       />
@@ -115,7 +115,7 @@ export default function HostingPage() {
     {/* Image */}
     <div>
       <img
-        src="/images/device-management.png"
+        src="/pages/device.webp"
         alt="Device Management"
         className="rounded-2xl w-full object-cover"
       />

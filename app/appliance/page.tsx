@@ -65,13 +65,13 @@ export default function AppliancePage() {
       {/* ================= HERO ================= */}
       <section className="relative min-h-[600px] h-[80vh] flex items-center text-white">
         <Image
-          src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc"
+          src="/pages/PBX.avif"
           alt="PBX Appliance"
           fill
           className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40" />
-
+<br></br>
         <div className="relative z-10 max-w-6xl mx-auto px-6">
           <FadeIn>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 max-w-2xl">
@@ -86,11 +86,7 @@ export default function AppliancePage() {
             </p>
           </SlideUp>
 
-          <SlideUp>
-            <button className="bg-primary px-8 py-4 rounded-lg font-semibold">
-              Request a Demo
-            </button>
-          </SlideUp>
+          
         </div>
       </section>
 

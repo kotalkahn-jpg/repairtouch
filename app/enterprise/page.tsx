@@ -17,7 +17,7 @@ const filters = [
         "Department-based routing",
         "Smart IVR navigation",
       ],
-      image: "/images/pbx-dashboard.png",
+      image: "/pages/dashboard.jpg",
     },
     {
       title: "Multi-Site & Global Communication",
@@ -29,7 +29,7 @@ const filters = [
         "Centralized communication",
         "Cross-location call routing",
       ],
-      image: "/images/global.png",
+      image: "/pages/global.jpg",
     },
     {
       title: "Call Center",
@@ -41,7 +41,7 @@ const filters = [
         "Real-time monitoring",
         "Agent performance tracking",
       ],
-      image: "/images/callcenter.png",
+      image: "/pages/call.jpg",
     },
     {
       title: "Interconnected Ecosystem",
@@ -53,7 +53,7 @@ const filters = [
         "API & SDK access",
         "Automation workflows",
       ],
-      image: "/images/integration.png",
+      image: "/pages/inter.jpg",
     },
   ]
 
@@ -66,7 +66,7 @@ export default function HostingPage() {
       <HeroSection
         title="Enterprise-Grade Phone System for Modern Businesses"
         description="Unified communication, centralized management, and enterprise-level reliability, ensuring stable, scalable, and secure communication across every branch."
-        backgroundImage="/hosting.jpg"
+        backgroundImage="pages/ente.jpg"
       />
 
       <div className="max-w-7xl mx-auto px-6 py-24">

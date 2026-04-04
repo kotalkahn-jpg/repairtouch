@@ -8,7 +8,7 @@ export default function HostingPage() {
       <HeroSection
         title="mobile"
         description="Unified communication, centralized management, and enterprise-level reliability, ensuring stable, scalable, and secure communication across every branch."
-        backgroundImage="/hosting.jpg"
+        backgroundImage="pages/mobile.webp"
       />
 <section className="py-24 bg-white">
 
@@ -21,7 +21,7 @@ export default function HostingPage() {
       <div className="absolute w-80 h-80 bg-blue-100 rounded-full blur-3xl"></div>
 
       <img
-        src="/images/mobile-ui.png"
+        src="/pages/po.webp"
         alt="Mobile Client"
         className="relative w-full max-w-sm object-contain opacity-90"
       />

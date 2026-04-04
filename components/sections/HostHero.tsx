@@ -1,10 +1,14 @@
 "use client"
 
+import CTASection from "./CTASection"
+
+
 export default function HostHero() {
   return (
+
     <section
       className="relative py-40 text-white bg-cover bg-center"
-      style={{ backgroundImage: "url('/hosting.jpg')" }}
+      style={{ backgroundImage: "url('pages/host.webp')" }}
     >
 
       {/* Overlay */}
@@ -25,8 +29,12 @@ export default function HostHero() {
           “Your business, online — stable, secure, and always available.”
         </p>
 
+
+
+
       </div>
 
     </section>
+    
   )
 }

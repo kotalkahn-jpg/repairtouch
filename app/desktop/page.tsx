@@ -11,7 +11,7 @@ export default function HostingPage() {
       <HeroSection
         title="desktop"
         description="Unified communication, centralized management, and enterprise-level reliability, ensuring stable, scalable, and secure communication across every branch."
-        backgroundImage="/hosting.jpg"
+        backgroundImage="/pages/desktop.webp"
       />
 
       <section className="w-full bg-white py-16 px-6 md:px-12 lg:px-20">
@@ -169,9 +169,9 @@ Linkus Desktop Client enables you to easily and quickly:
 
 function AnimatedImages() {
   const images = [
-    "/images/call-ui-1.png",
-    "/images/call-ui-2.png",
-    "/images/call-ui-3.png",
+    "/pages/Office.webp",
+    "/pages/video.webp",
+    "/pages/voice.webp",
   ]
 
   const [index, setIndex] = useState(0)

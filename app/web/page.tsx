@@ -10,7 +10,7 @@ export default function HostingPage() {
       <HeroSection
         title="web client"
         description="Unified communication, centralized management, and enterprise-level reliability, ensuring stable, scalable, and secure communication across every branch."
-        backgroundImage="/hosting.jpg"
+        backgroundImage="/pages/web.webp"
       />
 
       {/* NEW SECTION */}
@@ -153,7 +153,7 @@ export default function HostingPage() {
     {/* RIGHT SIDE (IMAGE) */}
     <div className="flex justify-center">
       <img
-        src="/images/pbx-modular.png"
+        src="/pages/uc.webp"
         alt="Flexible Modular Design"
         className="w-full max-w-md object-contain"
       />
@@ -161,6 +161,7 @@ export default function HostingPage() {
 
   </div>
 
+<CTASection/>
 </section>
     </>
   )
@@ -169,9 +170,9 @@ export default function HostingPage() {
 
 function AnimatedImages() {
   const images = [
-    "/images/call-ui-1.png",
-    "/images/call-ui-2.png",
-    "/images/call-ui-3.png",
+    "/pages/communi.webp",
+    "/pages/commm.webp",
+    "/pages/comm.webp",
   ]
 
   const [index, setIndex] = useState(0)

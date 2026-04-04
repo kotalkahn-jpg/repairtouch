@@ -10,7 +10,7 @@ export default function HostingPage() {
         title="Web Hosting & Infrastructure"
         description="We don’t just host websites — we build and manage reliable, scalable infrastructure that powers your entire online presence."
         quote="Your business, online — stable, secure, and always available."
-        backgroundImage="/hosting.jpg"
+        backgroundImage="pages/watched-cloud.jpg"
       />
       <br></br><br></br><br></br><br></br><br></br>
 
