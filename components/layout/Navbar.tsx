@@ -5,7 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useRef, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import {
   Menu,
@@ -55,10 +55,17 @@ useEffect(() => {
     <div className="absolute top-8 left-0 w-full flex justify-center z-[200]">
       <div className="bg-white shadow-lg rounded-md flex items-center justify-between px-6 md:px-10 py-3 w-[95%] md:w-[1200px]">
 
-        {/* LOGO */}
-        <Link href="/" className="text-xl font-bold text-blue-700">
-          RepairTouch
-        </Link>
+     {/* LOGO */}
+<Link href="/" className="flex items-center">
+  <Image
+    src="/logo.jpg"
+    alt="RepairTouch Logo"
+    width={180}
+    height={50}
+    priority
+    className="h-12 w-auto"
+  />
+</Link>   
 
         {/* DESKTOP NAV */}
         <div className="hidden md:flex items-center gap-6 text-sm font-medium">
