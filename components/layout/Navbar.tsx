@@ -58,7 +58,7 @@ useEffect(() => {
      {/* LOGO */}
 <Link href="/" className="flex items-center">
   <Image
-    src="/logo.jpg"
+    src="/logo.png"
     alt="RepairTouch Logo"
     width={180}
     height={50}
